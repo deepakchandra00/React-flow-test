@@ -54,7 +54,7 @@ const TextNode = ({ id, nodeData, updateNodeField }) => {
         const newVariables = extractVariables(newText);
         setVariables(newVariables);
 
-        updateNodeField(id, "textContent", newText);
+        updateNodeField("textContent", newText);
 
         // Update node internals to reflect changes
         updateNodeInternals(id);
