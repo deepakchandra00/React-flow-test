@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* src/App.css */
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.draggable-toolbar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: move;
+  z-index: 10;
+}
+
+.node {
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px;
+  background: white;
+}
+
+.node-content {
+  padding: 10px;
+}
+
+/* Specific styles for each node type */
+.node-input { background: #e3f2fd; }
+.node-output { background: #ffebee; }
+.node-llm { background: #f3e5f5; }
+.node-text { background: #e8f5e9; }
+.node-visualization { background: #e0f7fa; }
+.node-analytics { background: #f1f8e9; }
+.node-control { background: #e8eaf6; }
+.node-multimedia { background: #fce4ec; }
+.node-complex { background: #fff3e0; }
+
+/* Global CSS File: styles.css */
+
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Arial', sans-serif; /* Default font */
+  background-color: #f5f5f5; /* Light grey background */
+  color: #333333; /* Dark text color */
+  line-height: 1.6; /* Comfortable line height */
+  margin: 0;
+  padding: 0;
+}
+
+/* Node Container */
+.node-container {
+  border: 2px solid #CCCCCC; /* Light grey border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #FFFFFF; /* White background */
+  padding: 10px; /* Padding inside the node */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: auto; /* Dynamic width */
+  height: auto; /* Dynamic height */
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Node Header */
+.node-header {
+  font-size: 14px; /* Header font size */
+  margin-bottom: 10px; /* Space below header */
+  color: #333333; /* Dark grey color */
+  margin-top: -7px;
+}
+
+/* Node Content */
+.node-content {
+  font-size: 14px; /* Content font size */
+  color: #666666; /* Medium grey color */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between content elements */
+}
+
+.closeButton {
+  float: right;
+  border-radius: 50%;
+  border: none;
+  padding: 1px 4px;
+  margin-right: -8px;
+}
+
+/* Input and Select */
+.node-content input,
+.node-content select,
+.node-content textarea {
+  width: 100%; /* Full width elements */
+  padding: 8px; /* Padding inside inputs */
+  border: 1px solid #DDDDDD; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 14px; /* Font size for inputs */
+  color: #333333; /* Text color */
+}
+
+/* Label Styling */
+.node-content label {
+  display: block; /* Block labels for full width */
+  font-weight: bold; /* Bold labels */
+  margin-bottom: 5px; /* Space below labels */
+}
+
+/* Button Styling */
+.node-content button {
+  background-color: #3f51b5; /* Blue button */
+  color: #ffffff; /* White text */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Padding inside button */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.node-content button:hover {
+  background-color: #303f9f; /* Darker blue on hover */
+}
+
+/* React Flow Handle Styling */
+.react-flow__handle {
+  width: 10px; /* Handle size */
+  height: 10px; /* Handle size */
+  border-radius: 50%; /* Circular handles */
+  background-color: #3f51b5; /* Blue handles */
+  border: 2px solid #ffffff; /* White border */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* React Flow Variable Handle Styling */
+.react-flow__handle.variable-handle {
+  background-color: #ff9800; /* Orange color for variable handles */
+  position: absolute; /* Positioned relative to the node */
+  left: -10px; /* Positioned to the left */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect for handles */
+.react-flow__handle:hover {
+  background-color: #3f51b5; /* Slightly darker blue */
+}
+
+/* Styling for nodes with dynamic size based on content */
+.node-text textarea {
+  width: 100%;
+  height: auto;
+  min-height: 130px; /* Minimum height */
+  resize: none; /* Disable resizing */
+  border: none; /* No border */
+  background-color: transparent; /* Transparent background */
+  max-height: 500px;
+}
+
+/* Styling for connecting lines */
+.react-flow__edge-path {
+  stroke: #3f51b5; /* Blue stroke color */
+  stroke-width: 2px; /* Stroke width */
+}
+
+/* Tooltip Styling (if used) */
+.tooltip {
+  background-color: #333333; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 5px 10px; /* Padding */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 12px; /* Small font size */
+}
+
+/* Hover effect for nodes */
+.node-container:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Smooth transitions for dynamic elements */
+.dynamic-size {
+  transition: width 0.2s ease, height 0.2s ease; /* Smooth size transition */
+}
+path.react-flow__edge-path {
+  stroke-width: 4;
+  stroke: #3f51b5;
+}
+
+path.react-flow__edge-path:hover {
+  stroke-width: 10;
+  stroke: #3f51b5;
+}
+path .react-flow__edge-marker {
+  fill: #3f51b5; /* Blue color for the connector arrows */
+}
+.selected.selectable>div{
+border:2px solid #48dca3 !important;
+}
+
+.selectable>div{
+  border:2px solid #3f51b5 !important;
+  background: #fff;
+  }
